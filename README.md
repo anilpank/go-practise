@@ -52,7 +52,7 @@ go 1.16
 
 replace example.com/greetings => ../greetings
 
-```
+```go
 import (
     "fmt"
 
@@ -65,10 +65,10 @@ func main() {
     fmt.Println(message)
 }
 ```
+
 Edit the example.com/hello module to use your local example.com/greetings module.
-```
 go mod edit -replace example.com/greetings=../greetings
-```
+
 After you run the command, the go.mod file in the hello directory should include a replace directive:
 ```go
 module example.com/hello
@@ -78,9 +78,8 @@ go 1.16
 replace example.com/greetings => ../greetings
 ```
 From the command prompt in the hello directory, run the go mod tidy command to synchronize the example.com/hello module's dependencies, adding those required by the code, but not yet tracked in the module.
-```
 go mod tidy
-```
+
 After the command completes, the example.com/hello module's go.mod file should look like this:
 ```go
 module example.com/hello
