@@ -92,4 +92,26 @@ replace example.com/greetings => ../greetings
 require example.com/greetings v0.0.0-00010101000000-000000000000
 ```
 
+### Return and handle an error
+```go
+package greetings
+
+import (
+    "errors"
+    "fmt"
+)
+
+// Hello returns a greeting for the named person.
+func Hello(name string) (string, error) {
+    // If no name was given, return an error with a message.
+    if name == "" {
+        return "", errors.New("empty name")
+    }
+
+    // If a name was received, return a value that embeds the name
+    // in a greeting message.
+    message := fmt.Sprintf("Hi, %v. Welcome!", name)
+    return message, nil
+}
+```
 
