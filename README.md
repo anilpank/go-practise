@@ -25,3 +25,14 @@ go help
 ```go
 import "rsc.io/quote"
 ```
+
+### Creating a Module
+Start your module using go mod init command
+```go mod init example.com/greetings```
+
+### Declare a message variable to hold your greeting
+```go
+var message string
+message = fmt.Sprintf("Hi, %v. Welcome!", name)
+```
+
