@@ -40,12 +40,11 @@ message = fmt.Sprintf("Hi, %v. Welcome!", name)
 Enable dependency tracking for your code
 ```go
 go mod init example.com/hello
-go: creating new go.mod: module example.com/hello
 ```
+
+go: creating new go.mod: module example.com/hello
 Your hello.go code
-```go
-package main
-After you run the command, the go.mod file in the hello directory should include a replace directive:
+
 ```
 modgoule example.com/hello
 
@@ -55,10 +54,7 @@ replace example.com/greetings => ../greetings
 
 ```
 import (
-    "
-    From the command prompt in the hello directory, run the go mod tidy command to synchronize the example.com/hello module's dependencies, adding those required by the code, but not yet tracked in the module.
-    
-    fmt"
+    "fmt"
 
     "example.com/greetings"
 )
