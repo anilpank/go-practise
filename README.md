@@ -45,12 +45,13 @@ go mod init example.com/hello
 go: creating new go.mod: module example.com/hello
 Your hello.go code
 
-```
+```go
 modgoule example.com/hello
 
 go 1.16
 
 replace example.com/greetings => ../greetings
+```
 
 ```go
 import (
